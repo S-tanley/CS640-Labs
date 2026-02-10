@@ -1,0 +1,67 @@
+Q2
+
+Prediction:
+    We know for Q2, we need to go thourgh L1, L2, and L3. 
+    So for the latency, we should sum it up, which equals to 
+    (40ms + 10ms + 30ms) * 2 = 80 ms * 2 = 160 ms 
+    (we measure the roundtrip latency, so we need to multiply by 2).
+    For the throughput, the smallest one among these three will be the 
+    bottleneck, so the throughput is 20 Mbps.
+
+
+Results:
+    average RTT: 174.710 ms
+    throughput: 19.941 Mbps
+    The throughput fits our prediction very well, there is a small gap between 
+    the measured latency and the predicted latency, but still I think it is acceptable.
+    To sum up, the measurement fits our prediction. 
+
+Q3
+We are using 
+Prediction:
+    2 hosts: 
+        The latency maybe slightly higher than 160 ms (theoretically) or 170 ms (observered in Q1), since last time we already
+        have the data for only one pair between s1 and s4.
+        The sum of the throughput should be less than 20 Mbps.
+
+    3 hosts: 
+        The latency maybe slightly higher than it is in 2 hosts situation.
+        The sum of the throughput should still be less than 20 Mbps.
+
+Results:
+    2 hosts: 
+        average RTT: 169.729 ms, 171.495 ms
+        throughput: 17.364 Mbps, 5.303 Mbps
+        The latency basically was not be affected. This maybe because 
+        the switch buffers in this Mininet topology might be small or 
+        the TCP flows are self-regulating efficiently, 
+        preventing significant queue buildup.
+        The throughput is bigger than 20 Mbps, but very close to 20 Mbps. 
+        I think this is because we do not "literally" set up two clients 
+        at the same time. There is small gap between we set up the two clients.
+        So, there are small amount of time that there is only client is running.
+
+    3 hosts: 
+        average RTT: 169.476 ms, 171.268 ms, 171.136 ms
+        throughput: 17.197 Mbps, 2.495 Mbps, 4.100 Mbps
+        The results is similar to when there are two hosts. 
+        The latency was not affected very much and the throughput is 
+        bigger than 20 Mbps, but very close to 20 Mbps. 
+        I think we can use same explanation for this.
+
+    We also haev another finding. You can see that when you have multiple 
+    clients, there is one client will take over the link and be the 
+    dominate one. We find that which is the first client being set up, that 
+    client will be the dominate one.
+
+Q4
+
+Prediction:
+    For the latency, I think it will just like normal for h1 - h4, it will be 
+    around 160 ms, for h5 - h6, it will be around 40 ms.
+    For the throughput, I think the sum will be around 40 Mbps.
+
+results:
+    average RTT: 169.974 ms (h1 - h4), 45.366 ms (h5 - h6)
+    throughput: 17.743 Mbps (h1 - h4), 19.863 Mbps (h5 - h6)
+    It fits our prediction very well.

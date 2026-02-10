@@ -1,0 +1,39 @@
+# CS 640 HW 1
+
+Menber: Stanley Zheng,
+
+Structure of the HW:
+    cslogin1_cslogin2/ 
+    ├── iperfer/
+    │   ├── Iperfer.java 
+    │   └── Makefile    
+    ├── measurement/
+    │   ├── latency_L1.txt
+    │   ├── throughput_L1.txt
+    │   ├── ... (Q1-Q4 .txt results file)
+    │   └── answers.txt   (Including Q2-Q4 predictions and experimental analysis)
+    └── README           
+
+## Iperfer
+The `Iperfer` directory contains the implementation of the `Iperfer` 
+program in Java, along with a Makefile for compilation. 
+The `Iperfer.java` file includes the code for both the client and server 
+functionalities of the `Iperfer` program, which is designed to measure 
+network performance metrics such as latency and throughput. 
+The Makefile provides commands to compile the Java code and run the 
+client and server components of the `Iperfer` program.
+
+## Measurement
+The `measurement` directory contains the results of various network 
+performance measurements, including latency and throughput data for 
+different scenarios (L1, L2, L3, L4). Each scenario has its own text 
+file (e.g., `latency_L1.txt`, `throughput_L1.txt`, etc.) that contains
+the recorded measurements. The naming follows the required format mentioned 
+in the assignment instructions. For the measurements of Q3, the files 
+are named like xxx_Q3_xxx.text.
+
+Additionally, there is an `answers.txt` file that includes predictions 
+for questions Q2-Q4 based on the measurements, as well as an experimental 
+analysis of the results. This file provides insights into the observed 
+network performance metrics and discusses any trends or anomalies found 
+in the data.
